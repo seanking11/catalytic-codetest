@@ -4,12 +4,12 @@ class Steps extends Component {
 
 	constructor(props){
 		super(props);
-		this.changeActive = this.changeActive.bind(this);
 	}
 
+	makeActive() {
+		console.log(this.props.step);
+		this.props.changeActive(this.props.step);
 
-	changeActive(theStep) {
-		this.props.changeActive(theStep);
 	}
 
 
@@ -26,7 +26,7 @@ class Steps extends Component {
   render() {
 
     return (
-      <div className="row step" onClick={this.props.changeActive(this.props.step)}>
+      <div className="row step" onClick={this.makeActive.bind(this)}>
         <div className="col s2 step-number">{this.props.step.stepNumber}</div>
         <div className="col s10 step-content">
          <div className="step-title">{this.props.step.displayName}</div>

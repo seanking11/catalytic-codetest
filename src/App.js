@@ -14,13 +14,7 @@ class App extends Component {
       steps: steps,
       activeStep: steps[0]
     }
-
-  }
-
-
-
-  componentDidMount() {
-    console.log(this.state.steps);
+    this.changeActive = this.changeActive.bind(this);
   }
 
 
@@ -28,12 +22,13 @@ class App extends Component {
     this.setState({
       activeStep: theStep
     });
+    console.log(this.state.activeStep);
   }
 
   render() {
     
     var steps = _.map(this.state.steps, (step) => {
-      return <Steps step={step} steps={this.state.steps} key={step.stepNumber} changeActive={this.changeActive} />
+      return <Steps step={step} steps={this.state.steps} key={step.stepNumber} changeActive={this.changeActive.bind(this)} />
     });
     
 
@@ -60,6 +55,12 @@ class App extends Component {
 
 export default App;
 
+/*
+Pass down changeActive function to the <Step />
+In step, use that function to set the state of activeStep to the one we clicked on
+It will update the dom accordingly in Editor because the "step" props pulls from the state.
+
+*/
 
 /*
     fetch("./steps.json")

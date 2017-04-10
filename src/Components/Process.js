@@ -39,19 +39,19 @@ class Process extends Component {
           <div className="row">
             <div className="input-field col s12">
               <input id="process-title" value={this.state.processTitle} onChange={this.updateTitle.bind(this)} type="text" />
-              <label for="process-title">Process Title</label>
+              <label htmlFor="process-title">Process Title</label>
             </div>
           </div>
           <div className="row">
             <div className="input-field col s12">
               <input id="process-description" value={this.state.processDescription} onChange={this.updateDescription.bind(this)} type="text" />
-              <label for="process-description">Description</label>
+              <label htmlFor="process-description">Description</label>
             </div>
           </div>
           <div className="row">
             <div className="input-field col s12">
-              <input id="process-category" value={this.state.process.category} type="text" readonly/>
-              <label for="process-category">Category (View Only)</label>
+              <input id="process-category" value={this.state.process.category} type="text" readOnly/>
+              <label htmlFor="process-category">Category (View Only)</label>
             </div>
           </div>
         </div>

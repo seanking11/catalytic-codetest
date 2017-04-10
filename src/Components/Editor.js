@@ -6,14 +6,18 @@ class Editor extends Component {
     super(props)
     this.state = {
       stepName: props.step.stepName,
-      stepDescription: props.step.Description
+      stepDescription: props.step.description
     }
   }
 
-	componentWillMount(){
-    console.log(this.props);
+	componentWillReceiveProps(){
+    	this.setState({
+    		stepName: this.props.step.stepName,
+    		stepDescription: this.props.step.stepDescription
+    	});
+    	console.log(this.props.step);
 	}
-/*
+
 	updateTitle(event) {
 		this.setState({
 			processTitle: event.target.value
@@ -25,7 +29,7 @@ class Editor extends Component {
 			processDescription: event.target.value
 		});
 	}
-*/
+
 	save() {
 		console.log("Process Title: ");
 		console.log("Process Description: ");
@@ -35,8 +39,18 @@ class Editor extends Component {
 
     return (
       <div>
-      <h1>{this.state.stepName}</h1>
-      <h2>{this.state.stepDescription}</h2>
+      	<div className="row">
+            <div className="input-field col s12">
+              <input id="step-title" value={this.state.stepName} onChange={this.updateTitle.bind(this)} type="text" />
+              <label htmlFor="step-title">Step Name</label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s12">
+              <input id="step-description" value={this.state.stepDescription} onChange={this.updateDescription.bind(this)} type="text" />
+              <label htmlFor="step-description">Instructions</label>
+            </div>
+          </div>
       </div>
     );
   }
