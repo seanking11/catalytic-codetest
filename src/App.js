@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Steps from './Components/Steps';
 import Process from './Components/Process';
 import steps from '././Components/data/steps.json';
-//import Collapsible from './Components/Collapsible.js';
 import Editor from './Components/Editor';
 import _ from 'lodash';
 
@@ -17,7 +16,6 @@ class App extends Component {
     this.changeActive = this.changeActive.bind(this);
   }
 
-
   changeActive(theStep) {
     this.setState({
       activeStep: theStep
@@ -31,7 +29,6 @@ class App extends Component {
       return <Steps step={step} steps={this.state.steps} key={step.stepNumber} changeActive={this.changeActive.bind(this)} />
     });
     
-
     return (
       
     <div className="row">
@@ -54,20 +51,3 @@ class App extends Component {
 }
 
 export default App;
-
-/*
-Pass down changeActive function to the <Step />
-In step, use that function to set the state of activeStep to the one we clicked on
-It will update the dom accordingly in Editor because the "step" props pulls from the state.
-
-*/
-
-/*
-    fetch("./steps.json")
-      .then(d => {
-        this.setState({
-          stepsData: d
-        })
-      })
-      console.log(this.state);
-*/

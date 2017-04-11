@@ -30,11 +30,6 @@ class Editor extends Component {
 		});
 	}
 
-	save() {
-		console.log("Process Title: ");
-		console.log("Process Description: ");
-	}
-
   render() {
 
     return (

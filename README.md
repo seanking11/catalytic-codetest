@@ -1,5 +1,25 @@
 # Coding Challenge (Front End)
 
+## SEAN'S COMMENTS 
+
+To launch:
+In terminal, cd to root folder
+run 'npm start'
+
+To Do's:
+1. Have save button write to JSON instead of just updating the state
+2. Pull JSON via AJAX call
+3. Show step dependencies, fields, users, and conditions
+4. Be able to assign users to steps
+5. Implement save/delete step buttons to write to JSON instead of just updating state
+6. Clean up HTML/CSS - both sections independently scrollable
+7. Implement collapsable aspects of the UX.
+
+Bugs/Notes:
+- Clicking on a step updates the state but does not update the DOM from the state until another step is clicked.
+- There is a default user on each step to show the proof of concept since user functionality has not been implemented. This will change to only show who is assigned if there is anyone assigned.
+
+
 ## Expectations
 
 1. This project should not take more than 6-8 hours to complete.
