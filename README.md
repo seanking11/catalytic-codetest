@@ -18,6 +18,7 @@ To Do's:
 Bugs/Notes:
 - Clicking on a step updates the state but does not update the DOM from the state until another step is clicked.
 - There is a default user on each step to show the proof of concept since user functionality has not been implemented. This will change to only show who is assigned if there is anyone assigned.
+- Not all history is on Github unfortunately since I ran into a problem where I needed to start a new repo
 
 
 ## Expectations
